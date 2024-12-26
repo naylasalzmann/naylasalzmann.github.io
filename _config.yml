@@ -25,7 +25,7 @@ heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto
 email: thedevslot@gmail.com
 facebook_username: thedevslot
 twitter_username: thedevslot
-instagram_username: thedevslot
+instagram_username: naylasalzmann
 linkedin_username: thedevslot
 github_username:  thedevslot
 youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
@@ -41,11 +41,15 @@ google-analytics: UA-163806439-1
 disqus-shortname: thedevslot
 
 # Name of the Author
-author-name: TheDevsLot
+author-name: Nayla Salzmann
 # URL for the Image of the Author
-author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
+author-image: https://drive.google.com/file/d/1x-Z-7R7vtVO_xWwJGD4043j2_zCcZbvZ/view?usp=drive_link
 # 60 Words About the Author
-author-about: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget pharetra velit, dapibus bibendum ex. Maecenas vitae laoreet mauris, ac luctus metus. Aliquam luctus velit vel ipsum feugiat, vel venenatis mauris hendrerit. Sed at vulputate sapien, eget vehicula dolor. Aliquam volutpat pulvinar neque sit amet sodales.
+
+author-about: >
+  Singer-songwriter, guitarist, and producer of alternative rock and synth-pop, about to release her debut studio album.
+  As a teenager, she wrote dozens of songs and taught herself to record and produce her own music. However, it wasn’t until November 2023, when she moved to Buenos Aires, that she began professionally recording her debut studio album. Her first single is set to drop in January 2025.
+  
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
 author-url: https://github.com/thedevslot
 
