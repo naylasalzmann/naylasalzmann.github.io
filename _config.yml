@@ -18,7 +18,7 @@ site-keywords: Site, Template, Theme
 favicon-url: 
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
-heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+heroimage: https://live.staticflickr.com/65535/54213228244_f3de61eb8d_o.jpg
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
@@ -48,7 +48,7 @@ author-image: https://live.staticflickr.com/65535/54228361858_2e54462577_o.jpg
 
 author-about: >
   Singer-songwriter, guitarist, and producer of alternative rock and synth-pop, about to release her debut studio album.
-  As a teenager, she wrote dozens of songs and taught herself to record and produce her own music. However, it wasn’t until November 2023, when she moved to Buenos Aires, that she began professionally recording her debut studio album. Her first single is set to drop in January 2025.
+  As a teenager, she wrote dozens of songs and taught herself to record and produce her own music. However, it wasn’t until November 2023, when she moved to Buenos Aires, that she began professionally recording her debut studio album. Her first EP is set to be released in January 2025.
   
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
 author-url: https://github.com/thedevslot
