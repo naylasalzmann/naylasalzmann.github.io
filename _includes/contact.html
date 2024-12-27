@@ -1,13 +1,6 @@
 <section class="hero is-fullheight has-text-centered" id="contact">
     <div class="hero-body">
         <div class="container">
-            {% unless site.facebook_username == %}
-            <a id="contact-button" href="https://m.me/{{site.facebook_username}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
-                target="_blank">
-                <i class="fab fa-facebook-messenger"></i>Ping me on Messenger
-            </a>
-            {% endunless %}
             {% unless site.email == %}
             <a id="contact-button" href="mailto:{{site.email}}"
                 class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
@@ -19,7 +12,7 @@
             <a id="contact-button" href="https://www.twitter.com/intent/tweet?screen_name={{site.twitter_username}}"
                 class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
                 target="_blank">
-                <i class="fab fa-twitter"></i>Tweet me on Twitter
+                <i class="fa-brands fa-x-twitter"></i>DM me on X
             </a>
             {% endunless %}
             <hr>
@@ -28,10 +21,14 @@
             </h3>
             <div class="column is-full is-size-3">
                 {% unless site.facebook_username == %}
-                <a href="http://www.facebook.com/{{site.facebook_username}}" target="_blank" class="has-text-black"><i class="fab fa-facebook"></i></a>
+                <a href="http://www.facebook.com/{{site.facebook_username}}" target="_blank" class="has-text-black">
+                    <span class="icon">
+                        <i class="fab fa-facebook"></i>
+                    </span>
+                </a>
                 {% endunless %}
                 {% unless site.twitter_username == %}
-                <a href="https://twitter.com/intent/user?screen_name={{site.twitter_username}}" target="_blank" class="has-text-black"><i class="fab fa-twitter"></i></a>
+                <a href="https://twitter.com/intent/user?screen_name={{site.twitter_username}}" target="_blank" class="has-text-black"><i class="fa-brands fa-x-twitter"></i></a>
                 {% endunless %}
                 {% unless site.instagram_username ==  %}
                 <a href="http://www.instagram.com/{{site.instagram_username}}" target="_blank" class="has-text-black"><i class="fab fa-instagram"></i></a>
@@ -56,6 +53,12 @@
                 {% endunless %}
                 {% unless site.spotify_username ==  %}
                 <a href="http://open.spotify.com/user/{{site.spotify_username}}" target="_blank" class="has-text-black"><i class="fab fa-spotify"></i></a>
+                {% endunless %}
+                {% unless site.soundcloud_username ==  %}
+                <a href="http://soundcloud.com/{{site.soundcloud_username}}" target="_blank" class="has-text-black"><i class="fa-brands fa-soundcloud"></i></a>
+                {% endunless %}
+                {% unless site.bandcamp_username ==  %}
+                <a href="http://{{site.bandcamp_username}}.bandcamp.com/" target="_blank" class="has-text-black"><i class="fa-brands fa-bandcamp"></i></a>
                 {% endunless %}
             </div>
         </div>

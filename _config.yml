@@ -18,21 +18,23 @@ site-keywords: Site, Template, Theme
 favicon-url: 
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
-heroimage: https://live.staticflickr.com/65535/54213228244_f3de61eb8d_o.jpg
+heroimage: https://live.staticflickr.com/65535/54213229179_2cc1985923_o.jpg
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
-email: thedevslot@gmail.com
-facebook_username: thedevslot
-twitter_username: thedevslot
+email: naylasalzmann@gmail.com
+facebook_username:
+twitter_username: naylasalzmann
 instagram_username: naylasalzmann
-linkedin_username: thedevslot
-github_username:  thedevslot
-youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
-reddit_username: /
-behance_username: /
-dribbble_username: /
-spotify_username: /
+linkedin_username:
+github_username: naylasalzmann
+youtube_channel_id: UC2JzAdNJBifIMX0BbmrSZhw
+reddit_username: naylasalzmann
+behance_username:
+dribbble_username:
+spotify_username:
+soundcloud_username: nayla-salzmann
+bandcamp_username: naylasalzmann
 
 # Google Analytics
 google-analytics: UA-163806439-1
