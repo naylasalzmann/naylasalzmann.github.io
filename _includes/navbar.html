@@ -1,9 +1,9 @@
-<nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
+<nav class="navbar is-background-homeany-orange is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
     <div class="container">
 
         <!-- logo or branding image on left side -->
         <div class="navbar-brand">
-            <a class="navbar-item"
+            <a class="navbar-item cream-white"
                 href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">
                 <strong>{{site.title}}</strong>
             </a>
@@ -15,7 +15,7 @@
         </div>
 
         <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
-        <div class="navbar-menu has-background-black" id="navbar-menu">
+        <div class="navbar-menu" id="navbar-menu">
             <!-- navbar items | left side -->
             <!-- <div class="navbar-start">
             </div> -->
@@ -29,7 +29,6 @@
                     href="{{site.url}}{{site.baseurl}}/blog">BLOG</a>
                 {% include dropdown.html %}
             </div>
-
         </div>
     </div>
 </nav>

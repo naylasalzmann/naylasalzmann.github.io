@@ -33,8 +33,13 @@ a.navbar-item.is-active {
     }
 }
 
+// navbar cream texts
+a.navbar-item {
+    color: #ede7e3;
+}
+
 .navbar-link:not(.is-arrowless)::after {
-    border-color: grey;
+    border-color: #ede7e3;
 }
 
 
@@ -352,4 +357,18 @@ a.navbar-item.is-active {
             display: inline-block;
         }
     }
+}
+
+// custom styles
+
+.cream-white {
+    color: #ede7e3;
+}
+
+.homeany-orange {
+    color: #d7790f;
+}
+
+.is-background-homeany-orange {
+    background-color: #bc5f30;
 }

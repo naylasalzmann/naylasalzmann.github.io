@@ -6,11 +6,14 @@
             </div>
             <hr>
             <h3 class="is-size-5 is-uppercase has-text-weight-semibold cream-white is-marginless">
-                You can find me here
+                Social
             </h3>
             <div class="column is-full is-size-3">
                 {% unless site.instagram_username ==  %}
                 <a href="http://www.instagram.com/{{site.instagram_username}}" target="_blank" class="has-text-black"><i class="fab fa-instagram cream-white"></i></a>
+                {% endunless %}
+                {% unless site.instagram_username ==  %}
+                <a href="http://www.tiktok.com/@{{site.tiktok_username}}" target="_blank" class="has-text-black"><i class="fa-brands fa-tiktok cream-white"></i></a>
                 {% endunless %}
                 {% unless site.youtube_channel_id ==  %}
                 <a href="http://www.youtube.com/channel/{{site.youtube_channel_id}}" target="_blank" class="has-text-black"><i class="fab fa-youtube cream-white"></i></a>
