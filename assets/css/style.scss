@@ -33,11 +33,6 @@ a.navbar-item.is-active {
     }
 }
 
-// navbar cream texts
-a.navbar-item {
-    color: #ede7e3;
-}
-
 .navbar-link:not(.is-arrowless)::after {
     border-color: #ede7e3;
 }
@@ -316,6 +311,7 @@ a.navbar-item {
 
     #description {
         margin-bottom: 1.25vmax;
+        padding-top: 2.2rem;
     }
 
     .tag {
@@ -362,7 +358,7 @@ a.navbar-item {
 // custom styles
 
 .cream-white {
-    color: #ede7e3;
+    color: #FBF2E3;
 }
 
 .homeany-orange {
