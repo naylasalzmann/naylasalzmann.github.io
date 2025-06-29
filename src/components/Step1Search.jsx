@@ -1,32 +1,36 @@
 import { useState } from "react";
-import useSpotifyApi from "../hooks/useSpotifyApi";
+import useFetcher from "../hooks/useFetcher.js";
 import SearchSong from "./SearchSong.jsx";
 import SelectSong from "./SelectSong.jsx";
-import { Container } from "@mui/material";
+import { Container, Box } from "@mui/material";
 
-function Step1Search({ onNext, onSongsSelected }) {
+function Step1Search({ onSongsSelected }) {
+    const { getSongInfo } = useFetcher();
 
     const [songs, setSongs] = useState([]);
     const [loading, setLoading] = useState(false);
-    const fetcher = new useSpotifyApi();
 
     const handleSearch = async (query) => {
         setLoading(true);
-        const data = await fetcher.getSongInfo(query);
-        setLoading(false);
-
+        const data = await getSongInfo(query);
         setSongs(data);
+
+        setLoading(false);
     }
 
     const handleSelect = (song) => {
         onSongsSelected(song); // pass the selected song to the parent component
-        onNext(); // add song to the state in the parent component
     }
 
     return (
-        <Container maxWidth="sm" sx={{ py: 4 }} textAlign="center">
-            <SearchSong onSearch={handleSearch} loading={loading} />
-            <SelectSong songs={songs} onSelect={handleSelect}/>
+        <Container maxWidth="sm" sx={{ py: 4 }}>
+            <Box
+                display="flex"
+                flexDirection="column"
+            >
+                <SearchSong onSearch={handleSearch} loading={loading} />
+                <SelectSong songs={songs} onSelect={handleSelect}/>
+            </Box>
         </Container>
     );
 }

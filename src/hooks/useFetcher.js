@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function useSpotifyApi() {
+export default function useFetcher() {
     const [accessToken, setAccessToken] = useState(null);
 
     useEffect(() => {
@@ -34,10 +34,11 @@ export default function useSpotifyApi() {
         fetchToken();
     }, []);
 
+    // TODO: Refactor
     const getSongInfo = async (query, limit = 5) => {
         if (!accessToken) {
             console.error('Access token not available');
-            return [];
+            return null;
         }
 
         try {
@@ -62,30 +63,44 @@ export default function useSpotifyApi() {
             }));
         } catch (error) {
             console.error('Error fetching song info:', error);
-            return [];
+            return null;
         }
     }
 
     const getSongLyrics = async (artistName, trackName) => {
-        if (!accessToken) {
-            console.error('Access token not available');
+        if (!artistName || !trackName) {
+            console.error('Artist name or track name is missing');
             return '';
         }
 
-        const response = await fetch(
-            `https://lrclib.net/api/search?q=${encodeURIComponent(artistName)} ${encodeURIComponent(trackName)}`
-        );
+        // Fetch lyrics from the external API
+        try {
+            const response = await fetch(
+                `https://lrclib.net/api/search?q=${encodeURIComponent(artistName)} ${encodeURIComponent(trackName)}`
+            );
 
-        if (!response.ok) {
-            console.error('Failed to fetch lyrics');
-            return '';
+            if (!response.ok) {
+                console.error('Failed to fetch lyrics');
+                return null;
+            }
+
+            const data = await response.json();
+            console.log('Fetched data:', data);
+
+            const exactMatch = data.find(
+                (entry) => entry.trackName.toLowerCase().trim() === trackName.toLowerCase().trim() &&
+                entry.artistName.toLowerCase().includes(artistName.toLowerCase())
+            );
+
+            // Return the exact match if found, otherwise return the first available entry
+            console.log('Fetched lyrics:', data, exactMatch, trackName, artistName);
+
+            return exactMatch || data[0] || null;
+
+        } catch (error) {
+            console.error('Error fetching song lyrics:', error);
+            return null;
         }
-
-        const data = await response.json();
-        const exactMatch = data.find(
-            (entry) => entry.trackName.toLowerCase().trim() === trackName.toLowerCase().trim()
-        );
-        return exactMatch || data[0] || null;
     }
 
     return { getSongInfo, getSongLyrics };
