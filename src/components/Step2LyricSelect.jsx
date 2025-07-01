@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import { useState, useEffect } from 'react';
 import GoBackAndForward from './GoBackAndForward.jsx';
+import LoadingIndicator from './LoadingIndicator.jsx';
 
 // This component will display the lyrics of the selected song and allow the user to select lines
 // It will also handle the logic for moving to the next step in the process
@@ -37,7 +38,7 @@ function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, setSelectedLine
         fetchLyrics();
     }, [song, getSongLyrics]);
 
-    if (loading) return <div>Loading lyrics...</div>;
+    if (loading) return <LoadingIndicator message="Fetching lyrics..." />;
     if (!lyrics || lyrics.length === 0) {
         return <div>No lyrics found for this song.</div>;
     }
@@ -46,15 +47,15 @@ function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, setSelectedLine
 
     const toggleLine = (index, line) => {
         setSelectedLines((prevSelected) => {
-            if (prevSelected.includes(index)) {
-                // If the line is already selected, remove it
-                return prevSelected.filter((i) => i !== index);
+            const isAlreadySelected = prevSelected.some((item) => item.index === index);
+
+            if (isAlreadySelected) {
+                return prevSelected.filter((item) => item.index !== index);
             } else {
-                // Otherwise, add it to the selection
                 return [...prevSelected, { index, text: line }];
             }
         });
-    }
+    };
 
     return (
         <Container maxWidth="sm" sx={{ py: 4 }}>
