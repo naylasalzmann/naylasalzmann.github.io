@@ -1,7 +1,6 @@
 import {
     Box,
     Typography,
-    Button,
     Paper,
     Container
 } from '@mui/material';
@@ -13,7 +12,7 @@ import GoBackAndForward from './GoBackAndForward.jsx';
 // It will receive the selected song as a prop and fetch the lyrics using the Spotify API
 // The user can select lines from the lyrics, and when they click "Continue", it will move to the next step
 
-function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, goToScreen }) {
+function Step2LyricSelect({ song, getSongLyrics, onNext, onBack }) {
     const [lyrics, setLyrics] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedLines, setSelectedLines] = useState([]); // Array to keep track of selected lines
@@ -30,7 +29,7 @@ function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, goToScreen }) {
                 setLyrics(data);
             } catch (err) {
                 console.error('Unexpected error in lyrics effect:', err);
-                setLyrics(null); // this is optional
+                setLyrics(null);
             } finally {
                 setLoading(false);
             }
@@ -60,7 +59,6 @@ function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, goToScreen }) {
         });
     }
 
-    // Render the lyrics in a selectable format
     const handleLyricSelect = (lyric) => {
         // Handle lyric selection logic here
         console.log('Selected lyric:', lyric);
