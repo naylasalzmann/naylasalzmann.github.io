@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 export default function useFetcher() {
     const [accessToken, setAccessToken] = useState(null);
@@ -67,7 +67,7 @@ export default function useFetcher() {
         }
     }
 
-    const getSongLyrics = async (artistName, trackName) => {
+    const getSongLyrics = useCallback(async (artistName, trackName) => {
         if (!artistName || !trackName) {
             console.error('Artist name or track name is missing');
             return '';
@@ -101,7 +101,7 @@ export default function useFetcher() {
             console.error('Error fetching song lyrics:', error);
             return null;
         }
-    }
+    }, []);
 
     return { getSongInfo, getSongLyrics };
 }
