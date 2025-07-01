@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "gh-pages -d dist -b deploy"
+    "prepare-deploy": "touch dist/.nojekyll",
+    "deploy": "npm run build && npm run prepare-deploy && gh-pages -d dist -b deploy"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
