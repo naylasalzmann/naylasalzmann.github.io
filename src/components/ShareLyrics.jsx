@@ -10,7 +10,7 @@ export default function ShareLyrics({ targetRef, songName }) {
     const safeName = sanitizeFileName(songName ?? 'song-lyrics');
     
     try {
-      const dataUrl = await toPng(targetRef.current);
+      const dataUrl = await toPng(targetRef.current, { cacheBust: true });
 
       // Download image
       const link = document.createElement('a');
@@ -21,11 +21,11 @@ export default function ShareLyrics({ targetRef, songName }) {
       document.body.removeChild(link);
 
       // Try to open Instagram (mobile)
-      setTimeout(() => {
-        window.location.href = 'instagram://camera';
-      }, 1500);
+      //setTimeout(() => {
+      //  window.location.href = 'instagram://camera';
+      //}, 1500);
     } catch (err) {
-      console.error('Failed to share image to Instagram:', err);
+      console.error('Failed to share image:', err);
     }
   };
 
@@ -39,10 +39,10 @@ export default function ShareLyrics({ targetRef, songName }) {
           '&:hover': { backgroundColor: '#C42D5F' },
         }}
       >
-        Share to Instagram Stories
+        Download
       </Button>
       <Typography variant="body2" mt={1} color="text.secondary">
-        Downloads image & opens Instagram Stories (try on mobile)
+        (Share feature to be implemented)
       </Typography>
     </Box>
   );

@@ -20,14 +20,14 @@ export default function Step3ImageGenerator({ song, selectedLines, onBack }) {
             <GoBackAndForward
                 goBack={onBack}
                 goNext={null}
-                disableNext={selectedLines.length === 0}
+                disableNext={true}
             />
             <Box display="flex" flexDirection="column" gap={1} alignItems="center">
                 <Typography variant="h5" gutterBottom>
                     Sounds good!
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
-                    Now you can share your lyrics on Instagram Stories
+                    Now you can share these lyrics
                 </Typography>
 
                 <Box
