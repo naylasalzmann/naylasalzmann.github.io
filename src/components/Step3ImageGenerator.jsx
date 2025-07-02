@@ -37,7 +37,6 @@ export default function Step3ImageGenerator({ song, selectedLines, onBack }) {
                         color: '#fff',
                         borderRadius: 3,
                         p: 3,
-                        width: '100%',
                         maxWidth: 400,
                         boxShadow: 3,
                         userSelect: 'none',

@@ -1,5 +1,3 @@
-// components/InstagramShare.jsx
-import React from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import { toPng } from 'html-to-image';
 import { sanitizeFileName } from '../utils/fileUtils';
@@ -9,7 +7,7 @@ export default function ShareLyrics({ targetRef, songName }) {
   const handleShare = async () => {
     if (!targetRef?.current) return;
 
-    const safeName = sanitizeFileName(song?.name ?? 'song-lyrics');
+    const safeName = sanitizeFileName(songName ?? 'song-lyrics');
     
     try {
       const dataUrl = await toPng(targetRef.current);
