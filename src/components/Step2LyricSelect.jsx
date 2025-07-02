@@ -4,22 +4,33 @@ import {
     Paper,
     Container
 } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import GoBackAndForward from './GoBackAndForward.jsx';
 import LoadingIndicator from './LoadingIndicator.jsx';
+import WriteYourOwnLyrics from './WriteYourOwnLyrics.jsx';
 
 // This component will display the lyrics of the selected song and allow the user to select lines
 // It will also handle the logic for moving to the next step in the process
 // It will receive the selected song as a prop and fetch the lyrics using the Spotify API
 // The user can select lines from the lyrics, and when they click "Continue", it will move to the next step
 
-function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, setSelectedLines, selectedLines }) {
-    const [lyrics, setLyrics] = useState([]);
-    const [loading, setLoading] = useState(true);
+function Step2LyricSelect({ 
+    song, 
+    getSongLyrics, 
+    onNext, 
+    onBack, 
+    setSelectedLines, 
+    selectedLines, 
+    setLyrics, 
+    lyrics,
+    setLoading,
+    loading
+}) {
 
     useEffect(() => {
         const fetchLyrics = async () => {
-            if (!song || !song.artists?.length) return;
+            if (!song || !song.artists?.length) return; // prevent refetch if lyrics already exist
+            if (lyrics != null) return; // skips fetch only if lyrics is not null/undefined
 
             console.log('Fetching lyrics for:', song.artists, song.name);
             setLoading(true);
@@ -36,11 +47,11 @@ function Step2LyricSelect({ song, getSongLyrics, onNext, onBack, setSelectedLine
         };
 
         fetchLyrics();
-    }, [song, getSongLyrics]);
+    }, [song, getSongLyrics, lyrics]);
 
     if (loading) return <LoadingIndicator message="Fetching lyrics..." />;
     if (!lyrics || lyrics.length === 0) {
-        return <div>No lyrics found for this song.</div>;
+        return <WriteYourOwnLyrics />;
     }
 
     const lines = lyrics?.plainLyrics ? lyrics.plainLyrics.split('\n').filter(Boolean) : [];
