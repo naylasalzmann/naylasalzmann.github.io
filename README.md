@@ -1,48 +1,72 @@
-# Astro Starter Kit: Basics
+# Portfolio with Lyrics App
 
-```sh
-npm create astro@latest -- --template basics
+## About
+
+This is a work-in-progress portfolio website built with [Astro](https://astro.build/), featuring a **Lyrics Sharing App**. The Lyrics App is built using React and Material UI, allowing me to practice React development within Astro.
+
+The portfolio serves as the landing page, introducing me and linking to the Lyrics App available at `/lyrics-app`.
+
+In the future, the Lyrics App may be fully converted into Astro components or separated into another app for better performance and simplicity.
+
+## Features
+
+- Portfolio homepage with a clean, minimal design
+- Lyrics App built with React and Material UI:
+- Finding a song using Spotify Web API
+- Fetching the lyrics from lrclib
+- Generating a share-ready lyrics image with selected lyrics
+- Downloading the image in high quality
+- Mobile-friendly and responsive design
+- Tailwind CSS used for styling the portfolio
+
+## Technologies Used
+
+- [Astro](https://astro.build/)
+- [React](https://reactjs.org/)
+- [Material UI](https://mui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Live Version
+You can access the live version [here](https://naylasalzmann.github.io/)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+```
+npm install
+# or
+yarn install
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+npm run dev
+# or
+yarn dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Open your browser and visit http://localhost:4321 to see the portfolio homepage.
+Navigate to /lyrics-app to access the Lyrics App.
 
-## 🧞 Commands
+Future Plans
+- Convert the Lyrics App to Astro components for improved performance
+- Add more projects and portfolio sections
+- Implement API for adding new lyrics to LRCLIB
+- Add sharing functionality
 
-All commands are run from the root of the project, from a terminal:
+## License
+This project is licensed under the MIT License.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+##  Contact
+Feel free to reach out to me via LinkedIn: [Nayla Salzmann](https://www.linkedin.com/in/naylasalzmann/)
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
