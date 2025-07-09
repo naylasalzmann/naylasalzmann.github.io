@@ -32,8 +32,6 @@ export default function LyricsApp() {
 
     return (
         <>
-            <div>Lyrics Sharing App</div>
-
             {step === 1 && <Step1Search onSongsSelected={onSongsSelected}/>}
             {/* Step 2: This step needs refactoring */}
             {step === 2 && <Step2LyricSelect 

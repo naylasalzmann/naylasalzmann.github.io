@@ -16,12 +16,12 @@ export default function SearchSong({ onSearch, loading }) {
     <Container maxWidth="sm" sx={{ py: 4 }}>
         <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Typography variant="h6" component="h1" textAlign="center">
-              Find the Song!
+              Lyrics Sharing App
             </Typography>
 
             <TextField
             size="small"
-            label="Song or Artist"
+            label="Type song name or artist"
             fullWidth
             value={query}
             onChange={(e) => setQuery(e.target.value)}

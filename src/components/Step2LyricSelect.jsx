@@ -106,7 +106,6 @@ function Step2LyricSelect({
                                 textAlign: 'center',
                                 backgroundColor: isSelected ? 'primary.light' : 'background.paper',
                                 fontSize: '1.25rem',
-                                fontWeight: isSelected ? 'bold' : 'normal',
                             }}
                         >
                             {line}
